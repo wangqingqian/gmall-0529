@@ -2,10 +2,18 @@ package com.atwqq.gmall.manager.mapper;
 
 import com.atwqq.gmall.manager.BaseAttrInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 
-/**
- * @author wangqingqian
- * @date 2018/11/9 - 17:18
- */
+import java.util.List;
+
 public interface BaseAttrInfoMapper extends BaseMapper<BaseAttrInfo> {
+
+    /**
+     * 按照三级分类id查出平台属性的名和值
+     * @param catalog3Id
+     * @return
+     */
+    List<BaseAttrInfo> getBaseAttrInfoByCatalog3Id(Integer catalog3Id);
+
+    List<BaseAttrInfo> getBaseAttrInfoGroupByValueId(@Param("valueIds") List<Integer> valueIds);
 }

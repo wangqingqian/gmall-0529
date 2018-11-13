@@ -1,15 +1,27 @@
 package com.atwqq.gmall.manager;
 
+import com.atwqq.gmall.SuperBean;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
+import java.util.List;
+
 /**
- * @author wangqingqian
- * @date 2018/11/9 - 17:12
+ * 平台属性名信息
  */
 @Data
 public class BaseAttrInfo extends SuperBean {
+
+
     private String attrName;
 
-    private String catalog3Id;
+    private Integer catalog3Id;
+
+    @TableField(exist = false)  //数据库并不存在此字段
+    private List<BaseAttrValue> attrValues;
+
+
 
 }

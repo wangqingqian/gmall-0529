@@ -1,7 +1,6 @@
 package com.atwqq.gmall.manager;
 
 import com.atwqq.gmall.manager.mapper.UserMapper;
-import com.atwqq.gmall.manager.service.impl.CatalogServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;

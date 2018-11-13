@@ -3,12 +3,12 @@ package com.atwqq.gmall.manager;
 import java.util.List;
 
 /**
- * @author wangqingqian
- * @date 2018/11/9 - 19:01
+ * 平台属性
  */
 public interface BaseAttrInfoService {
+
     /**
-     * 获取三级分类下的属性名
+     * 获取三级分类下的平台属性名
      * @param catalog3Id
      * @return
      */
@@ -20,4 +20,6 @@ public interface BaseAttrInfoService {
      * @return
      */
     public List<BaseAttrValue> getBaseAttrValueByAttrId(Integer baseAttrInfoId);
+
+    void saveOrUpdateBaseInfo(BaseAttrInfo baseAttrInfo);
 }

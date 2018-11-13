@@ -13,19 +13,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-/**
- * @author wangqingqian
- * @date 2018/11/9 - 17:51
- */
 @Service
 public class CatalogServiceImpl implements CatalogService {
+
     @Autowired
     BaseCatalog1Mapper baseCatalog1Mapper;
+
     @Autowired
     BaseCatalog2Mapper baseCatalog2Mapper;
+
     @Autowired
     BaseCatalog3Mapper baseCatalog3Mapper;
-
     @Override
     public List<BaseCatalog1> getAllBaseCatalog1() {
         return baseCatalog1Mapper.selectList(null);
@@ -34,7 +32,8 @@ public class CatalogServiceImpl implements CatalogService {
     @Override
     public List<BaseCatalog2> getBaseCatalog2ByC1id(Integer catalog1Id) {
         QueryWrapper<BaseCatalog2> queryWrapper = new QueryWrapper<BaseCatalog2>().eq("catalog1_id", catalog1Id);
-        return baseCatalog2Mapper.selectList(queryWrapper);
+
+        return  baseCatalog2Mapper.selectList(queryWrapper);
     }
 
     @Override
